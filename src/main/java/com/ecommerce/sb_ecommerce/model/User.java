@@ -33,7 +33,7 @@ public class User {
     private String userName;
 
     @NotBlank
-    @Size(max = 30)
+    @Size(max = 100)
     @Column(name="password")
     private String password;
 
@@ -44,11 +44,10 @@ public class User {
     private String email;
 
 
-    public User(Long userId, String username, String password, String email) {
-        this.userId = userId;
+    public User(String username, String email, String password) {
         this.userName = username;
-        this.password = password;
         this.email = email;
+        this.password = password;
     }
 
 

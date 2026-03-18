@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Role {
 
     @Id
@@ -19,4 +19,7 @@ public class Role {
     private Long roleId;
     private AppRole roleName;
 
+    public Role(AppRole appRole) {
+        this.roleName = appRole;
+    }
 }
