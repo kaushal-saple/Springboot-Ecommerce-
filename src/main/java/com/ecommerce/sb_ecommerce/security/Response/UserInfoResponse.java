@@ -18,7 +18,11 @@ public class UserInfoResponse {
         this.jwtToken = jwtToken;
     }
 
-
+    public UserInfoResponse(Long userId, String username, List<String> roles) {
+        this.userId = userId;
+        this.username = username;
+        this.roles = roles;
+    }
 }
 
 
