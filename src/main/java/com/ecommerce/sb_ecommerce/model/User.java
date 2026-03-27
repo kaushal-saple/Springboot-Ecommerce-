@@ -63,15 +63,7 @@ public class User {
     private Set<Role> roles =  new HashSet<Role>();
 
 
-    @ManyToMany(
-            cascade = {CascadeType.PERSIST , CascadeType.MERGE}
-    )
-
-    @JoinTable(
-            name = "user_address",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name="address_id")
-    )
+    @OneToMany(mappedBy = "user",cascade = {CascadeType.PERSIST , CascadeType.MERGE})
     private List<Address>  addresses =new ArrayList<Address>();
 
     @ToString.Exclude

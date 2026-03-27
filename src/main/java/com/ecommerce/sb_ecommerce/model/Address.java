@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 
@@ -33,7 +36,7 @@ public class Address {
 
     @NotBlank
     @Size(min = 3 , message = "State name must be least 3 characters")
-    private String State;
+    private String state;
 
     @NotBlank
     @Size(min = 3 , message = "Country name must be least 3 characters")
@@ -48,10 +51,14 @@ public class Address {
         this.buildingName = buildingName;
         this.street = street;
         this.city = city;
-        State = state;
+        this.state = state;
         this.country = country;
         this.pincode = pincode;
     }
+
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    User user;
 
 
 
